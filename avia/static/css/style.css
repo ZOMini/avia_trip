@@ -1,0 +1,78 @@
+body {
+	background: #959494;
+	color: #bbb;
+}
+
+#container_2 {
+	width: 950px;
+	background: #4f4f4f;
+	margin: auto;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgb(191, 189, 189);
+}
+
+#container {
+	width: 950px;
+	background: #4f4f4f;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgb(188, 188, 188);
+}
+
+table {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table tr td {
+	empty-cells: show;
+	background: #bab9b9;
+	font-size: 80%;
+	border: 1px solid #5f5f5f;
+	max-width: 0;
+	padding: 7px 3px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+#miner_stat tr td {
+	width: 50%;
+}
+
+#device_stat {
+	margin-top: 10px;
+}
+
+#error {
+	color: #e33;
+	text-align: center;
+	display: none;
+}
+
+* {
+    font-family: helvetica;
+}
+
+.column_title_activ {
+	color: rgb(165, 161, 161);
+	font-weight: bold;
+	background: #c4c1c1;
+}
+
+.column_titl2 {
+	color: rgb(216, 216, 216);
+	font-weight: bold;
+	background: #b8b8b8;
+}
+
+.column_title {
+	font-weight: normal;
+}
+
+.text_yellow {
+	color: #dc4;
+}
+

@@ -1,0 +1,22 @@
+{% load static %}
+<head>
+    <meta http-equiv="refresh" content="300">
+	<meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <div id="container">
+        <table id="device_stat" class="device_stat_default">
+            <td> {{text}} - Табло всех вылетов </td>
+            <tr></tr>
+        {% for obj in page_obj %}
+            <td>{{obj}}</td>
+            <tr></tr>
+        {%endfor%}
+        </table>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        {% include './paginator.html' %}
+    </div>
+
+<body>
