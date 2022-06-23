@@ -4,10 +4,7 @@ from trip.models import Airport, Company, Pass_in_trip, Plane, Trip
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
-    # list_display = ('__all__',)
-    # search_fields = ('username', 'email')
     empty_value_display = '-пусто-'
-    # list_filter = ('username', 'email')
 
 @admin.register(Airport)
 class AirportAdmin(admin.ModelAdmin):

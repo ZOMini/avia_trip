@@ -18,9 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'django_extensions',
-    'users',
-    'api',
-    'trip',
+    'rest_framework',
+    'users.apps.UserConfig',
+    'api.apps.ApiConfig',
+    'trip.apps.TripConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +89,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 AUTH_USER_MODEL = 'users.User'
 

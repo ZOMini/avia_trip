@@ -1,7 +1,7 @@
 from django.urls import path
 from trip import views
 
-app_name = 'posts'
+app_name = 'trip'
 urlpatterns = [
     path('', views.index, name='index'),
     path('airport/<int:airport_id>/', views.airport, name='airport'),
