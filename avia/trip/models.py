@@ -1,8 +1,11 @@
+import pytz
+from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.core.validators import MinValueValidator
+# from django.core.validators import MinValueValidator
 from django.db import models
-from trip.validators import validator_datetime
+from django.utils import timezone
 
+from trip.validators import validator_datetime
 from users.models import User
 
 
@@ -27,7 +30,7 @@ class Plane(models.Model):
         verbose_name='Название самолета',
         help_text='Введите название самолета'
     )
-    number = models.IntegerField(
+    number = models.PositiveIntegerField(
         verbose_name='Номер самолета',
         help_text='Введите номер самолета'
     )
@@ -36,7 +39,7 @@ class Plane(models.Model):
         verbose_name='Готовность самолета',
         help_text='Измените готовность самолета'
     )
-    capacity = models.SmallIntegerField(
+    capacity = models.PositiveIntegerField(
         verbose_name='Количество мест',
         help_text='Введите кол-во мест в самолете'
     )
@@ -48,12 +51,25 @@ class Plane(models.Model):
         return self.name
 
 class Airport(models.Model):
+    TZ_CHOICES = [
+            ("UTC" , "UTC"),
+            ("Europe/Moscow" , "Europe/Moscow"),
+            ("Asia/Kamchatka", "Asia/Kamchatka")
+        ]
     name = models.CharField(
         max_length=128,
         unique=True,
         verbose_name='Название аэропорта',
         help_text='Введите название аэропорта'
     )
+    ap_time_zone = models.CharField(
+        max_length=128,
+        verbose_name='Таймзона аэропорта',
+        help_text='Введите таймзону аэропорта',
+        choices=TZ_CHOICES,
+        default=settings.TIME_ZONE
+        )
+    
     class Meta:
         verbose_name = 'Аэропорт'
         verbose_name_plural = 'Аэропорты'
@@ -118,11 +134,11 @@ class Pass_in_trip(models.Model):
         verbose_name='Пассажир',
         help_text='Пассажир'
     )
-    place = models.SmallIntegerField(
+    place = models.PositiveIntegerField(
         unique=True,
         verbose_name='Номер места',
         help_text='Введите номер места',
-        validators=[MinValueValidator(1, 'Место не может быть менее 1.'),]
+        # validators=[MinValueValidator(1, 'Место не может быть менее 1.'),]
     )
     trip = models.ForeignKey(
         Trip,

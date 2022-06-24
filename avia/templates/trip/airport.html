@@ -1,4 +1,5 @@
 {% load static %}
+{% load tz %}
 <head>
     <meta http-equiv="refresh" content="300">
 	<meta charset="UTF-8">
@@ -8,11 +9,17 @@
 <body>
     <div id="container">
         <table id="device_stat" class="device_stat_default">
-            <td> Табло всех вылетов из {{page_obj.0.airport_from}} </td>
+            {% timezone TIME_ZONE %}
+            <td> Табло всех вылетов из {{page_obj.0.airport_from}} Месное время: {% now "SHORT_DATETIME_FORMAT" %}
+            </td>
             <tr></tr>
+            {% endtimezone %}
         {% for obj in page_obj %}
-            <td>{{obj}}</td>
+            {% timezone TIME_ZONE %}
+            <td>{{obj.id}} {{obj.company}} {{obj.plane}} {{obj.airport_from}} 
+                - {{obj.airport_to}} {{obj.time_out}} - {{obj.time_in}}</td>
             <tr></tr>
+            {% endtimezone %}
         {%endfor%}
         </table>
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
