@@ -1,0 +1,33 @@
+#Получение токена по username & password.
+# "token": "bbe8f7f7b688272b1bba73210b69a8dcf070d0a6"
+#Логин и пороль можно получить: python manage.py createsuperuser
+POST http://127.0.0.1:8000/api-token-auth/
+Content-Type: application/json
+
+{
+    "username": "ee-2@ya.ru",
+    "password": "Vitaliya"
+}
+###
+# Дерево запросов.
+GET  http://127.0.0.1:8000/api/v1/trip/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/pass_in_trip/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/airport/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/company/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/plane/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+

@@ -125,6 +125,7 @@ class Trip(models.Model):
         board_buse = self.plane.trips.all().aggregate(models.Max('time_in'))
         if self.time_out <= board_buse['time_in__max']:
             raise ValidationError('В это время самолет еще в полете.')
+    
 
 class Pass_in_trip(models.Model):
     passenger = models.ForeignKey(
