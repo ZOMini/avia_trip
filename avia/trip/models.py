@@ -1,3 +1,5 @@
+from urllib import request
+
 import pytz
 from django.conf import settings
 from django.core.exceptions import ValidationError
@@ -159,4 +161,3 @@ class Pass_in_trip(models.Model):
     def clean(self):
         if self.place > self.trip.plane.capacity:
             raise ValidationError('Место не может быть больше, чем мест в самолете.')
-    

@@ -1,8 +1,10 @@
 import pytz
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 
-from trip.models import Airport, Trip
+from trip.form import Pass_in_tripForm
+from trip.models import Airport, Pass_in_trip, Trip
 
 
 def index(request):
@@ -52,3 +54,18 @@ def in_airport(request, airport_id):
         'page_obj': page_obj,
     }
     return render(request, template, context)
+
+@login_required()
+def order(request):
+    if request.method == 'POST':
+        form = Pass_in_tripForm(request.POST)
+        if form.is_valid():
+            order = Pass_in_trip()
+            order.place = form.cleaned_data['place']
+            order.trip = form.cleaned_data['trip']
+            order.passenger = request.user
+            order.save()
+            return render(request, 'trip/text.html', {'message': 'Место приобретено!'}) 
+        return render(request, 'trip/order.html', {'form': form})
+    form = Pass_in_tripForm()
+    return render(request, 'trip/order.html', {'form': form}) 

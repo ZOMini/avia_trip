@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from trip.models import Airport, Company, Pass_in_trip, Plane, Trip
 
 
@@ -12,6 +13,7 @@ class AirportAdmin(admin.ModelAdmin):
 
 @admin.register(Pass_in_trip)
 class Pass_in_tripAdmin(admin.ModelAdmin):
+    list_display = ('id', 'passenger', 'place', 'trip')
     empty_value_display = '-пусто-'
 
 @admin.register(Plane)

@@ -1,0 +1,10 @@
+{% block title %}{% endblock %}
+{% block content %}
+<h1>Выберете номер места</h1>
+<form method="POST" action="{% url 'trip:order' %}">
+    {% csrf_token %}
+    <p>Введите номер номер места:</p> 
+    {{ form.as_p }}
+    <input type="submit" value="Заказать">
+</form> 
+{% endblock %}
