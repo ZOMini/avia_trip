@@ -6,8 +6,9 @@ SECRET_KEY = 'geg3ys+11g=i7%csl)(*g&r6$$544nf^u5!8fh%d+m&x&6-95='
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['127.0.0.1',]
 
+INTERNAL_IPS = ['127.0.0.1',]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
