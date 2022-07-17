@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',
+    'drf_yasg',
     'users.apps.UserConfig',
     'api.apps.ApiConfig',
     'trip.apps.TripConfig',

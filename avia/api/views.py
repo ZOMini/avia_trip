@@ -26,7 +26,7 @@ class Pass_in_tripViewSet(viewsets.ModelViewSet):
     permission_classes = (AdminOrReadOnly, )
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['passenger','place','trip']
-    search_fields = ['passenger__username']
+    search_fields = ['passenger__last_name']
 
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()
