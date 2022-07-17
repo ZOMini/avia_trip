@@ -18,11 +18,5 @@ router_v1.register('plane', PlaneViewSet, 'plane')
 router_v1.register('company', CompanyViewSet, 'company')
 
 urlpatterns = [
-#     path('v1/post_items_serial/<name_id>/',
-#          PostItemsSerialViews.as_view(), name='post_items_serial'),
-#     path('v1/delete_items_serial/',
-#          DeleteItemsSerialViews.as_view(), name='delete_items_serial'),
-#     path('v1/alt_delete_items_serial/',
-#          AltDeleteItemsSerialViews.as_view(), name='alt_delete_items_serial'),
     path('v1/', include(router_v1.urls)),
 ]
