@@ -33,7 +33,6 @@ class Pass_in_tripWriteSerializer(ModelSerializer):
         fields = '__all__'
         model = Pass_in_trip
         read_only = ['passenger','trip']
-        # depth = 2
 
 class Pass_in_tripReadSerializer(ModelSerializer):
     passenger = StringRelatedField()

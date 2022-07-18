@@ -12,3 +12,8 @@
 - Django 4.0
 - Django REST framework 3.13
 - Drf_yasg 1.2 (ReDoc + Swagger) API documentation
+
+## Info
+- Для аутентификацию используем стандартный модуль DRF - Authtoken
+- Для тестирования использовал REST Client for Visual Studio Code, см. файл requests.http в папке с проектом.
+- Добавил автотесты API - Unit test(django)
