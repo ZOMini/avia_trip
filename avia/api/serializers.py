@@ -10,8 +10,19 @@ class AirportSerializer(ModelSerializer):
         fields = '__all__'
         model = Airport
 
-class TripSerializer(ModelSerializer):
+class TripWriteSerializer(ModelSerializer):
 
+    class Meta:
+        fields = '__all__'
+        read_only = ['company','plane','airport_from','airport_to']
+        model = Trip
+
+class TripReadSerializer(ModelSerializer):
+    company = StringRelatedField()
+    plane = StringRelatedField()
+    airport_from = StringRelatedField()
+    airport_to = StringRelatedField()
+    
     class Meta:
         fields = '__all__'
         read_only = ['company','plane','airport_from','airport_to']
