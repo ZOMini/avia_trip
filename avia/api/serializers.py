@@ -1,6 +1,5 @@
 from rest_framework.serializers import ModelSerializer, StringRelatedField
 
-from api.sub_serializers import PassangerUserSerialiser
 from trip.models import Airport, Company, Pass_in_trip, Plane, Trip
 
 
@@ -28,13 +27,23 @@ class TripReadSerializer(ModelSerializer):
         read_only = ['company','plane','airport_from','airport_to']
         model = Trip
 
-class Pass_in_tripSerializer(ModelSerializer):
+class Pass_in_tripWriteSerializer(ModelSerializer):
 
     class Meta:
         fields = '__all__'
         model = Pass_in_trip
         read_only = ['passenger','trip']
         # depth = 2
+
+class Pass_in_tripReadSerializer(ModelSerializer):
+    passenger = StringRelatedField()
+    trip = StringRelatedField()
+    
+    class Meta:
+        fields = '__all__'
+        model = Pass_in_trip
+        read_only = ['passenger','trip']
+
 
 class PlaneSerializer(ModelSerializer):
     

@@ -5,7 +5,8 @@ from api.permissions import AdminOrReadOnly
 from api.serializers import (
     AirportSerializer,
     CompanySerializer,
-    Pass_in_tripSerializer,
+    Pass_in_tripReadSerializer,
+    Pass_in_tripWriteSerializer,
     PlaneSerializer,
     TripReadSerializer,
     TripWriteSerializer
@@ -28,11 +29,16 @@ class TripViewSet(viewsets.ModelViewSet):
     
 class Pass_in_tripViewSet(viewsets.ModelViewSet):
     queryset = Pass_in_trip.objects.all()
-    serializer_class = Pass_in_tripSerializer
+    # serializer_class = Pass_in_tripSerializer
     permission_classes = (AdminOrReadOnly, )
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['passenger','place','trip']
     search_fields = ['passenger__last_name']
+
+    def get_serializer_class(self):
+        if self.action in ('create', 'update', 'partial_update', 'delete'):
+            return Pass_in_tripWriteSerializer
+        return Pass_in_tripReadSerializer
 
 class AirportViewSet(viewsets.ModelViewSet):
     queryset = Airport.objects.all()

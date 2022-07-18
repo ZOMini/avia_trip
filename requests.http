@@ -59,6 +59,10 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 GET  http://127.0.0.1:8000/api/v1/trip?company=1&airport_from=1
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/trip?search=Пулково-1
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
 ### -------------------pass_in_trip--------------
 GET  http://127.0.0.1:8000/api/v1/pass_in_trip/
@@ -80,7 +84,7 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-PUT http://127.0.0.1:8000/api/v1/pass_in_trip/19/
+PUT http://127.0.0.1:8000/api/v1/pass_in_trip/20/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
@@ -91,7 +95,15 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-DELETE http://127.0.0.1:8000/api/v1/pass_in_trip/19/
+DELETE http://127.0.0.1:8000/api/v1/pass_in_trip/20/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/pass_in_trip/?passenger=1
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/pass_in_trip/?search=pir
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
@@ -108,15 +120,4 @@ GET  http://127.0.0.1:8000/api/v1/plane/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
-###
-GET  http://127.0.0.1:8000/api/v1/trip?search=Пулково-1
-Content-Type: application/json
-Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
-###
-GET  http://127.0.0.1:8000/api/v1/pass_in_trip/?passenger=1
-Content-Type: application/json
-Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
-###
-GET  http://127.0.0.1:8000/api/v1/pass_in_trip/?search=pir
-Content-Type: application/json
-Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
