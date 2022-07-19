@@ -1,5 +1,3 @@
-# import json
-
 from django.contrib.auth import get_user_model
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient, APITestCase
@@ -199,4 +197,4 @@ class Test_API(APITestCase):
         # ----delete request----
         response = self.client.delete('/api/v1/pass_in_trip/1/', format='json')
         self.assertEqual(response.status_code, 204)
-        self.assertEqual(Trip.objects.count(), 1)
+        self.assertEqual(Pass_in_trip.objects.count(), 1)

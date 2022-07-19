@@ -34,7 +34,7 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос.
 # Даты должны быть больше текущих.
-PUT http://127.0.0.1:8000/api/v1/trip/16/
+PUT http://127.0.0.1:8000/api/v1/trip/19/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
@@ -48,7 +48,7 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-DELETE http://127.0.0.1:8000/api/v1/trip/17/
+DELETE http://127.0.0.1:8000/api/v1/trip/19/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 ###

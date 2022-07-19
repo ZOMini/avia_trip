@@ -16,16 +16,11 @@ class TripWriteSerializer(ModelSerializer):
         read_only = ['company','plane','airport_from','airport_to']
         model = Trip
 
-class TripReadSerializer(ModelSerializer):
+class TripReadSerializer(TripWriteSerializer):
     company = StringRelatedField()
     plane = StringRelatedField()
     airport_from = StringRelatedField()
     airport_to = StringRelatedField()
-    
-    class Meta:
-        fields = '__all__'
-        read_only = ['company','plane','airport_from','airport_to']
-        model = Trip
 
 class Pass_in_tripWriteSerializer(ModelSerializer):
 
@@ -34,15 +29,9 @@ class Pass_in_tripWriteSerializer(ModelSerializer):
         model = Pass_in_trip
         read_only = ['passenger','trip']
 
-class Pass_in_tripReadSerializer(ModelSerializer):
+class Pass_in_tripReadSerializer(Pass_in_tripWriteSerializer):
     passenger = StringRelatedField()
     trip = StringRelatedField()
-    
-    class Meta:
-        fields = '__all__'
-        model = Pass_in_trip
-        read_only = ['passenger','trip']
-
 
 class PlaneSerializer(ModelSerializer):
     
