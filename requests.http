@@ -112,11 +112,37 @@ GET  http://127.0.0.1:8000/api/v1/airport/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 ###
+GET  http://127.0.0.1:8000/api/v1/airport/1/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+POST http://127.0.0.1:8000/api/v1/airport/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+{
+    "name": "test_Airport"
+}
+###
+# Слаг ID взять из предыдущего ответа на POST запрос
+PUT http://127.0.0.1:8000/api/v1/airport/7/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+{
+    "name": "test_Airport_2"
+}
+###
+DELETE http://127.0.0.1:8000/api/v1/airport/7/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+### -------------company----------------
 GET  http://127.0.0.1:8000/api/v1/company/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 ###
-GET  http://127.0.0.1:8000/api/v1/plane/
+GET  http://127.0.0.1:8000/api/v1/company/1/
 Content-Type: application/json
 Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 ###
@@ -126,5 +152,50 @@ Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
 
 {
     "name": "UralAir"
-
 }
+###
+# Слаг ID взять из предыдущего ответа на POST запрос
+PUT http://127.0.0.1:8000/api/v1/company/4/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+{
+    "name": "UralAir_2"
+}
+###
+DELETE http://127.0.0.1:8000/api/v1/company/4/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+### ---------------plane--------------------
+GET  http://127.0.0.1:8000/api/v1/plane/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+GET  http://127.0.0.1:8000/api/v1/plane/1/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+###
+POST http://127.0.0.1:8000/api/v1/plane/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+{
+    "name": "TU-144",
+    "number": "78787878",
+    "capacity": "152"
+}
+###
+PUT http://127.0.0.1:8000/api/v1/plane/2/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6
+
+{
+    "name": "TU-144",
+    "number": "99999999",
+    "capacity": "155"
+}
+###
+DELETE http://127.0.0.1:8000/api/v1/plane/2/
+Content-Type: application/json
+Authorization: Token bbe8f7f7b688272b1bba73210b69a8dcf070d0a6

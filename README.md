@@ -17,3 +17,4 @@
 - Для аутентификацию используем стандартный модуль DRF - Authtoken
 - Для тестирования использовал REST Client for Visual Studio Code, см. файл requests.http в папке с проектом.
 - Добавил автотесты API - Unit test(django)
+- Добавил фильтры и поиск в API
