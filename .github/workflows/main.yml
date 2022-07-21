@@ -19,7 +19,8 @@ jobs:
         pip install -r avia/requirements.txt 
 
     - name: Test with django tests
-      run: |
-        python avia/manage.py test
       with: 
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: |
+        python avia/manage.py test
+
