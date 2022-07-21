@@ -13,7 +13,8 @@
 - Python 3.9
 - Django 4.0
 - Django REST framework 3.13
-- Drf_yasg 1.2 (ReDoc + Swagger) API documentation http://176.195.196.126:9000/api/redoc/ 
+- Drf_yasg 1.2 (ReDoc + Swagger) API documentation http://176.195.196.126:9000/api/redoc/
+- Postgres 13.0
 
 ## Info
 - Для аутентификацию используем стандартный модуль DRF - Authtoken
