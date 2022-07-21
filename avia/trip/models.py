@@ -1,11 +1,7 @@
-from urllib import request
-
-import pytz
 from django.conf import settings
 from django.core.exceptions import ValidationError
 # from django.core.validators import MinValueValidator
 from django.db import models
-from django.utils import timezone
 
 from trip.validators import validator_datetime
 from users.models import User
@@ -17,14 +13,16 @@ class Company(models.Model):
         unique=True,
         verbose_name='Компания',
         help_text='Введите название компании'
-        )
+    )
+
     class Meta:
         verbose_name = 'Компания'
         verbose_name_plural = 'Компании'
 
     def __str__(self):
-        return self.name    
-    
+        return self.name
+
+
 class Plane(models.Model):
     name = models.CharField(
         max_length=128,
@@ -45,6 +43,7 @@ class Plane(models.Model):
         verbose_name='Количество мест',
         help_text='Введите кол-во мест в самолете'
     )
+
     class Meta:
         verbose_name = 'Самолет'
         verbose_name_plural = 'Самолеты'
@@ -52,12 +51,13 @@ class Plane(models.Model):
     def __str__(self):
         return self.name
 
+
 class Airport(models.Model):
     TZ_CHOICES = [
-            ("UTC" , "UTC"),
-            ("Europe/Moscow" , "Europe/Moscow"),
-            ("Asia/Kamchatka", "Asia/Kamchatka")
-        ]
+        ("UTC", "UTC"),
+        ("Europe/Moscow", "Europe/Moscow"),
+        ("Asia/Kamchatka", "Asia/Kamchatka")
+    ]
     name = models.CharField(
         max_length=128,
         unique=True,
@@ -70,14 +70,15 @@ class Airport(models.Model):
         help_text='Введите таймзону аэропорта',
         choices=TZ_CHOICES,
         default=settings.TIME_ZONE
-        )
-    
+    )
+
     class Meta:
         verbose_name = 'Аэропорт'
         verbose_name_plural = 'Аэропорты'
 
     def __str__(self):
         return self.name
+
 
 class Trip(models.Model):
     company = models.ForeignKey(
@@ -109,15 +110,16 @@ class Trip(models.Model):
         help_text='В аэропорт'
     )
     time_out = models.DateTimeField(
-        validators=[validator_datetime,],
+        validators=[validator_datetime, ],
         verbose_name='Дата/Время вылета',
     )
     time_in = models.DateTimeField(
         verbose_name='Дата/Время прилета',
-        validators=[validator_datetime,],
+        validators=[validator_datetime, ],
     )
+
     class Meta:
-        verbose_name = 'Перелет'   
+        verbose_name = 'Перелет'
         verbose_name_plural = 'Перелеты'
 
     def __str__(self):
@@ -127,7 +129,7 @@ class Trip(models.Model):
         board_buse = self.plane.trips.all().aggregate(models.Max('time_in'))
         if self.time_out <= board_buse['time_in__max']:
             raise ValidationError('В это время самолет еще в полете.')
-    
+
 
 class Pass_in_trip(models.Model):
     passenger = models.ForeignKey(
@@ -154,7 +156,7 @@ class Pass_in_trip(models.Model):
     class Meta:
         verbose_name = 'Пассажир_место'
         verbose_name_plural = 'Пассажиры_места'
-    
+
     def __str__(self):
         return f'Пассажир - {self.passenger.first_name} {self.passenger.last_name} место - {self.place} рейс ID -{self.trip.id}'
 

@@ -13,16 +13,16 @@ from api.views import (
 )
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Avia API",
-      default_version='v1',
-      description="Документация для приложения api проекта Avia",
-      # terms_of_service="URL страницы с пользовательским соглашением",
-      contact=openapi.Contact(email="ee@ya.ru"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Avia API",
+        default_version='v1',
+        description="Документация для приложения api проекта Avia",
+        # terms_of_service="URL страницы с пользовательским соглашением",
+        contact=openapi.Contact(email="ee@ya.ru"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 app_name = 'api'
@@ -39,4 +39,3 @@ urlpatterns = [
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('v1/', include(router_v1.urls)),
 ]
-
