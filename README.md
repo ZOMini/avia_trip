@@ -1,4 +1,5 @@
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://176.195.196.126:9000/)
+![example workflow](https://github.com/zomini/avia_trip/actions/workflows/main.yml/badge.svg)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 # Avia_trip
 - Пет проект. Avia trip - база данных авиаперелетов. В разработке.
