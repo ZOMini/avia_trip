@@ -20,4 +20,4 @@ jobs:
 
     - name: Test with django tests
       run: |
-        python manage.py test
+        ./avia/python manage.py test
