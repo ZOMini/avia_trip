@@ -62,6 +62,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r avia/requirements.txt
     - name: Run migrations
-      run: python avia/manage.py migrate
+      run: python manage.py migrate
     - name: Run tests
-      run: python avia/manage.py test
+      run: python manage.py test
