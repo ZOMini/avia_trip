@@ -153,7 +153,7 @@ class Test_API(APITestCase):
         # ----get request----
         response = self.client.get('/api/v1/trip/2/', format='json')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {"id": 2,"company": "UralAir","plane": "TU-134","airport_from": "Пулково-1(Санкт-Петербург)","airport_to": "Шереметьево(Москва)","time_out": "2022-07-23T05:30:00Z","time_in": "2022-07-23T06:00:00Z"})
+        self.assertEqual(response.json(), {"id": 2,"company": "UralAir","plane": "TU-134","airport_from": "Пулково-1(Санкт-Петербург)","airport_to": "Шереметьево(Москва)","time_out": "2023-07-23T05:30:00Z","time_in": "2023-07-23T06:00:00Z"})
         # ----list request----
         self.client.post('/api/v1/trip/', {"time_out": "2023-07-23T06:30:00Z","time_in": "2023-07-23T07:00:00Z","company": 6,"plane": 6,"airport_from": 7,"airport_to": 8}, format='json')
         response = self.client.get('/api/v1/trip/', format='json')
@@ -183,7 +183,7 @@ class Test_API(APITestCase):
         # ----get request----
         response = self.client.get('/api/v1/pass_in_trip/1/', format='json')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json(), {'id': 1, 'passenger': 'zomini', 'place': 145,'trip': 'id: 1, по маршруту: Пулково-1(Санкт-Петербург) - ''Шереметьево(Москва), вылет 2022-07-23 05:30:00+00:00, прибытие ''2022-07-23 06:00:00+00:00'})
+        self.assertEqual(response.json(), {'id': 1, 'passenger': 'zomini', 'place': 145,'trip': 'id: 1, по маршруту: Пулково-1(Санкт-Петербург) - ''Шереметьево(Москва), вылет 2023-07-23 05:30:00+00:00, прибытие ''2023-07-23 06:00:00+00:00'})
         # ----list request----
         self.client.post('/api/v1/pass_in_trip/', {"passenger": 4,"trip": 1,"place": "140"}, format='json')
         response = self.client.get('/api/v1/pass_in_trip/', format='json')
