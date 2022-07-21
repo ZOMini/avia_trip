@@ -61,4 +61,4 @@ jobs:
     - name: Run migrations
       run: python avia/manage.py migrate
     - name: Run tests
-      run: python avia/manage.py test
+      run: python avia/manage.py test api
