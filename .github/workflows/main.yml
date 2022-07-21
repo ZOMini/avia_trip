@@ -21,3 +21,4 @@ jobs:
     - name: Test with django tests
       run: |
         python avia/manage.py test
+      with: ${{ secrets.SECRET_KEY }}
