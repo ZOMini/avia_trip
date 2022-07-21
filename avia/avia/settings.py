@@ -2,11 +2,13 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'geg3ys+11g=i7%csl)(*g&r6$$544nf^u5!8fh%d+m&x&6-95='
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','176.195.196.126:9000', 'web:8000','web', '*']
+
+CSRF_TRUSTED_ORIGINS = ['http://*.176.195.196.126:9000','http://*.127.0.0.1']
 
 INTERNAL_IPS = ['127.0.0.1',]
 
@@ -60,13 +62,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'avia.wsgi.application'
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT')
     }
-}
-
+} 
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -123,7 +135,8 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 AUTH_USER_MODEL = 'users.User'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
