@@ -1,3 +1,4 @@
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://176.195.196.126:9000/)
 # Avia_trip
 - Пет проект. Avia trip - база данных авиаперелетов. В разработке.
 - Проект работает: http://176.195.196.126:9000/admin/ (ee-2@ya.ru / Vitaliya)
