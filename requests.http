@@ -1,10 +1,10 @@
 # Работает в VSC - глобальное расширение REST Client
-# Проект запущен 176.195.196.126:9000, если нет, то:
+# Проект запущен 62.84.117.214:9002, если нет, то:
 # Получение токена по username & password.
 # Логин и пороль можно получить: python manage.py createsuperuser.
 # Затем поменять Token в http запросах. Токен - POST запрос ниже.
 
-POST http://176.195.196.126:9000/api-token-auth/
+POST http://62.84.117.214:9002/api-token-auth/
 Content-Type: application/json
 
 {
@@ -13,85 +13,85 @@ Content-Type: application/json
 }
 
 ###  -------------------airport--------------------
-GET  http://176.195.196.126:9000/api/v1/airport/
+GET  http://62.84.117.214:9002/api/v1/airport/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/airport/1/
+GET  http://62.84.117.214:9002/api/v1/airport/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-POST http://176.195.196.126:9000/api/v1/airport/
+POST http://62.84.117.214:9002/api/v1/airport/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "test_Airport"
 }
 ###
-POST http://176.195.196.126:9000/api/v1/airport/
+POST http://62.84.117.214:9002/api/v1/airport/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "test_Airport_2"
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-PUT http://176.195.196.126:9000/api/v1/airport/1/
+PUT http://62.84.117.214:9002/api/v1/airport/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "test_Airport_3"
 }
 ###
-DELETE http://176.195.196.126:9000/api/v1/airport/1/
+DELETE http://62.84.117.214:9002/api/v1/airport/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 ### -------------company----------------
-GET  http://176.195.196.126:9000/api/v1/company/
+GET  http://62.84.117.214:9002/api/v1/company/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/company/1/
+GET  http://62.84.117.214:9002/api/v1/company/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-POST http://176.195.196.126:9000/api/v1/company/
+POST http://62.84.117.214:9002/api/v1/company/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "UralAir"
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-PUT http://176.195.196.126:9000/api/v1/company/1/
+PUT http://62.84.117.214:9002/api/v1/company/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "UralAir_2"
 }
 ###
-DELETE http://176.195.196.126:9000/api/v1/company/1/
+DELETE http://62.84.117.214:9002/api/v1/company/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 ### ---------------plane--------------------
-GET  http://176.195.196.126:9000/api/v1/plane/
+GET  http://62.84.117.214:9002/api/v1/plane/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/plane/1/
+GET  http://62.84.117.214:9002/api/v1/plane/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-POST http://176.195.196.126:9000/api/v1/plane/
+POST http://62.84.117.214:9002/api/v1/plane/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "TU-144",
@@ -99,9 +99,9 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
     "capacity": "152"
 }
 ###
-PUT http://176.195.196.126:9000/api/v1/plane/1/
+PUT http://62.84.117.214:9002/api/v1/plane/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "name": "TU-144",
@@ -109,24 +109,24 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
     "capacity": "155"
 }
 ###
-DELETE http://176.195.196.126:9000/api/v1/plane/1/
+DELETE http://62.84.117.214:9002/api/v1/plane/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 ### -------------------trip--------------------------
 # Дерево запросов.
-GET  http://176.195.196.126:9000/api/v1/trip/1
+GET  http://62.84.117.214:9002/api/v1/trip/1
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/trip/
+GET  http://62.84.117.214:9002/api/v1/trip/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
 # Даты должны быть больше текущих.
-POST http://176.195.196.126:9000/api/v1/trip/
+POST http://62.84.117.214:9002/api/v1/trip/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "time_out": "2023-07-23T05:30:00Z",
@@ -139,9 +139,9 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос.
 # Даты должны быть больше текущих.
-PUT http://176.195.196.126:9000/api/v1/trip/1/
+PUT http://62.84.117.214:9002/api/v1/trip/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "time_out": "2023-07-23T05:30:00Z",
@@ -153,34 +153,34 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-DELETE http://176.195.196.126:9000/api/v1/trip/1/
+DELETE http://62.84.117.214:9002/api/v1/trip/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/trip?airport_from=2&airport_to=1
+GET  http://62.84.117.214:9002/api/v1/trip?airport_from=2&airport_to=1
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/trip?company=1&airport_from=1
+GET  http://62.84.117.214:9002/api/v1/trip?company=1&airport_from=1
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/trip?search=Пулково-1
+GET  http://62.84.117.214:9002/api/v1/trip?search=Пулково-1
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 ### -------------------pass_in_trip--------------
-GET  http://176.195.196.126:9000/api/v1/pass_in_trip/
+GET  http://62.84.117.214:9002/api/v1/pass_in_trip/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/pass_in_trip/1/
+GET  http://62.84.117.214:9002/api/v1/pass_in_trip/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-POST http://176.195.196.126:9000/api/v1/pass_in_trip/
+POST http://62.84.117.214:9002/api/v1/pass_in_trip/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "place": "99",
@@ -189,9 +189,9 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-PUT http://176.195.196.126:9000/api/v1/pass_in_trip/1/
+PUT http://62.84.117.214:9002/api/v1/pass_in_trip/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 
 {
     "place": "97",
@@ -200,14 +200,14 @@ Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
 }
 ###
 # Слаг ID взять из предыдущего ответа на POST запрос
-DELETE http://176.195.196.126:9000/api/v1/pass_in_trip/1/
+DELETE http://62.84.117.214:9002/api/v1/pass_in_trip/1/
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/pass_in_trip/?passenger=1
+GET  http://62.84.117.214:9002/api/v1/pass_in_trip/?passenger=1
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
 ###
-GET  http://176.195.196.126:9000/api/v1/pass_in_trip/?search=pir
+GET  http://62.84.117.214:9002/api/v1/pass_in_trip/?search=pir
 Content-Type: application/json
-Authorization: Token 8a344fad211bef51ad946335f778b703de9cd0ad
+Authorization: Token cb122157ff2292aec0081eabbea951b90463a653
