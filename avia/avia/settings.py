@@ -8,7 +8,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*',]
 
-CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1',]
 SERV_HOST = os.getenv('HOST')
 CSRF_TRUSTED_ORIGINS.append(f'http://*.{SERV_HOST}:9002')
 
