@@ -1,8 +1,8 @@
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://62.84.117.214:9002/api/redoc/)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://130.193.37.228:9002/api/redoc/)
 ![example workflow](https://github.com/zomini/avia_trip/actions/workflows/main.yml/badge.svg)
 # Avia_trip
 - Пет проект. Avia trip - база данных авиаперелетов. В разработке.
-- Проект работает: http://62.84.117.214:9002/admin/ (ee-2@ya.ru / Vitaliya)
+- Проект работает: http://130.193.37.228:9002/admin/ (ee-2@ya.ru / Vitaliya)
 -    в requests.http тестирование API
 - (Проект для отработки навыков работы с DRF.)
 
@@ -15,7 +15,7 @@
 - Python 3.9
 - Django 4.0
 - Django REST framework 3.13
-- Drf_yasg 1.2 (ReDoc + Swagger) API documentation http://62.84.117.214:9002/api/redoc/
+- Drf_yasg 1.2 (ReDoc + Swagger) API documentation http://130.193.37.228:9002/api/redoc/
 - Postgres 13.0
 
 ## Info
